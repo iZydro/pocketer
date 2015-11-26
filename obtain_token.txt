@@ -1,0 +1,14 @@
+# Obtain a request token
+curl --data "consumer_key=37721-8c94d4ec9f3c2cfcd0725233" --data "redirect_uri=localhost" --header "X-Accept=application/x-www-form-urlencoded;Content-Type:application/x-www-form-urlencoded; charset=UTF-8" "https://getpocket.com/v3/oauth/request" -v
+
+code=62cfa2b5-73fe-c07f-598b-de4bab
+
+# Authorize user through browser
+https://getpocket.com/auth/authorize?request_token=62cfa2b5-73fe-c07f-598b-de4bab&redirect_uri=http://localhost
+
+# Obtain the token
+curl --data "consumer_key=37721-8c94d4ec9f3c2cfcd0725233" --data "code=62cfa2b5-73fe-c07f-598b-de4bab" --header "X-Accept=application/x-www-form-urlencoded" --header "Content-Type:application/x-www-form-urlencoded; charset=UTF-8" "https://getpocket.com/v3/oauth/authorize" -v
+
+access_token=ed85b6b9-88db-d3d5-146f-92d84d&username=isidrogilabert%40gmail.com
+
+curl --data '{"url":"http:\/\/nocobardes.blogspot.com", "title":"isidropollos", "time":1346976937, "tags":"isidro,pollos", "consumer_key":"37721-8c94d4ec9f3c2cfcd0725233", "access_token":"ed85b6b9-88db-d3d5-146f-92d84d"}' --header "X-Accept=application/x-www-form-urlencoded" --header "Content-Type:application/json; charset=UTF-8" "https://getpocket.com/v3/add" -v
